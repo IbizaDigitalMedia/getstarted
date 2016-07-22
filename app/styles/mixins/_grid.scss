@@ -1,0 +1,97 @@
+// Grid
+
+@mixin make-containers($containers: $containers) {
+  @each $breakpoint, $width in $containers {
+    @include make-breakpoint($breakpoint) {
+      max-width: $width;
+    }
+  }
+}
+
+@mixin make-breakpoint($name, $breakpoints: $breakpoints) {
+  $min: map-get($breakpoints, $name);
+  $min: if($min != 0, $min, null);
+
+  @if ($min) {
+    @include media(min-width $min) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+@mixin make-shift($breakpoint, $columns: $grid-columns) {
+  @for $i from 0 through $columns {
+    .s-#{$breakpoint}-#{$i} {
+      @include shift($i);
+    }
+  }
+}
+
+@mixin make-grid($columns: $grid-columns, $breakpoints: $breakpoints) {
+  @if not $flex-grid {
+    @each $breakpoint, $size in $breakpoints {
+      @include make-breakpoint($breakpoint) {
+        @for $i from 1 through $columns {
+          @include make-shift($breakpoint);
+
+          .c-#{$breakpoint}-#{$i} {
+            @include span-columns($i);
+
+            &.full-width {
+              @include make-full-width();
+
+              &.no-gutter {
+                @include make-full-width(false);
+              }
+            }
+
+            &.no-gutter {
+              @include span-columns($i, block-collapse);
+            }
+          }
+        }
+      }
+    }
+  }
+  @else {
+    // TODO: Flex grid support
+  }
+}
+
+@mixin make-full-width($has-gutter: true) {
+  @include transform(translateX(-50%));
+  @if $has-gutter {
+    width: calc(100vw - #{$gutter * 2}) !important;
+  }
+  @else {
+    width: calc(100vw) !important;
+  }
+  margin-right: 0;
+  margin-left: calc(50%);
+}
+
+.container {
+  @include make-containers();
+
+  @if $container-full-width {
+    @include outer-container(100%);
+  }
+  @else {
+    @include outer-container($container-max-width);
+  }
+
+  &.full-width {
+    @include outer-container(100%);
+  }
+}
+
+.row {
+  @include row();
+
+  zoom: 1;
+}
+
+@include make-grid();

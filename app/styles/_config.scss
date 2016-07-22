@@ -1,0 +1,66 @@
+//
+// 1. Grid
+//
+
+// Max width of container class
+// default: 1200px
+$container-max-width: 1200px;
+
+// Enables full width container
+// default: false
+$container-full-width: false !default;
+
+// Enables flex grid (experimental)
+// default: false
+$flex-grid: false !default;
+
+// EM base (for converting px to em)
+// default: 16px
+$em-base: 16px !default;
+
+// Number of grid columns
+// default: 12
+$grid-columns: 12 !default;
+
+// Gutter width (accepts em)
+// default: 1.875em (30px)
+$gutter: 1.875em !default;
+
+
+//
+// 2. Breakpoints
+//
+
+$breakpoints: (
+  // Extra small phones
+  // default: 0
+  xs: 0,
+
+  // Small screens/phones
+  // default: 480px
+  sm: 480px,
+
+  // Medium screens/tablet
+  // default: 768px
+  md: 768px,
+
+  // Large screens/desktop
+  // default: 992px
+  lg: 992px,
+
+  // Extra large screens/desktop
+  // default: 1200px
+  xl: 1200px
+) !default;
+
+
+//
+// 3. Containers
+//
+
+$containers: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
