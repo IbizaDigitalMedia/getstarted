@@ -1,0 +1,113 @@
+// Helpers
+
+/**
+ * Accepts a Sass list of directions and sizes
+ * for applying padding to elements.
+ *
+ * Example:
+ *   @include gutter-padding(top 1, right 1, bottom 2, left 1);
+ *
+ * @param  {list} $padding... List of directions and size
+ */
+@mixin gutter-padding($padding...) {
+  @each $direction, $value in $padding {
+    padding-#{$direction}: $value * $gutter;
+  }
+}
+
+/**
+ * Accepts a Sass list of directions and sizes
+ * for applying margin to elements.
+ *
+ * Example:
+ *   @include gutter-margin(top 1, right 1, bottom 2, left 1);
+ *
+ * @param  {list} $margin... List of directions and size
+ */
+@mixin gutter-margin($margin...) {
+  @each $direction, $value in $margin {
+    margin-#{$direction}: $value * $gutter;
+  }
+}
+
+/**
+ * Container for elements that are centered
+ * vertically.
+ *
+ * Example:
+ *   .container {
+ *     @include valign-container();
+ *
+ *     // Element to be centered vertically
+ *     .inner {
+ *       @include valign-centered();
+ *     }
+ *   }
+  */
+@mixin valign-container() {
+  position: relative;
+  height: 100%;
+}
+
+/**
+ * Center element vertically inside a
+ * valign-container.
+ *
+ * Example:
+ *   @see valign-container()
+  */
+@mixin valign-centered() {
+  @include transform(translateY(-50%));
+  position: relative;
+  top: 50%;
+  display: block;
+}
+
+@mixin make-hide-helpers($breakpoints: $breakpoints) {
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: initial;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+
+  @each $breakpoint, $size in $breakpoints {
+    @include make-breakpoint($breakpoint) {
+      .hide-on-#{$breakpoint} {
+        display: none;
+      }
+
+      .show-on-#{$breakpoint} {
+        display: initial;
+      }
+
+      .visible-on-#{$breakpoint} {
+        visibility: visible;
+      }
+
+      .invisible-on-#{$breakpoint} {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+@mixin make-align-helpers() {
+  @each $alignment in (left, center, right) {
+    .align-#{$alignment} {
+      text-align: $alignment;
+    }
+  }
+}
+
+@include make-hide-helpers();
+@include make-align-helpers();

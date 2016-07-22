@@ -50,6 +50,8 @@
 
             &.no-gutter {
               @include span-columns($i, block-collapse);
+
+              margin-right: 0;
             }
           }
         }
@@ -92,6 +94,19 @@
   @include row();
 
   zoom: 1;
+}
+
+@if ($debug) {
+  [class*="c-"] {
+    padding: $gutter;
+
+    background-color: rgba(#000000, 0.15);
+    border: 1px solid rgba(#000000, 0.2);
+  }
+
+  .row {
+    margin-bottom: $gutter;
+  }
 }
 
 @include make-grid();
