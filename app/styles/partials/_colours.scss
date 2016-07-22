@@ -1,0 +1,50 @@
+//
+// 1. Base colours
+//
+
+$colour-black: #000000;
+$colour-oil: #08110e;
+$colour-slate: #3f3f40;
+$colour-grey: #cccbbb;
+$colour-white: #ffffff;
+$colour-transparent: rgba(0, 0, 0, 0);
+
+$colour-sea: #014057;
+$colour-blood: #bf3636;
+$colour-pearl: #fbfbfb;
+$colour-teal: #01b0f3;
+$colour-sky: #4a9aff;
+$colour-hot: #f51a47;
+$colour-navy: #204470;
+$colour-peach: #ff8088;
+$colour-grass: #75bf3d;
+
+
+//
+// 2. Site colours
+//
+
+$colour-cta: $colour-teal;
+$colour-body: $colour-white;
+
+
+//
+// 3. Typography colours
+//
+
+$colour-text: $colour-sea;
+$colour-header: $colour-cta;
+$colour-link: $colour-sky;
+$colour-blockquote: $colour-hot;
+$colour-cite: $colour-grey;
+
+
+//
+// 4. Button colours
+//
+
+$colour-button: $colour-cta;
+$colour-button-text: $colour-pearl;
+$colour-button-text-hover: $colour-white;
+$colour-gel: $colour-pearl;
+$colour-success: $colour-grass;

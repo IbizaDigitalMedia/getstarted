@@ -1,0 +1,19 @@
+// Body
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+}
+
+body {
+  background: $colour-body;
+}
+
+// Used for debug
+.box {
+  padding: $gutter;
+
+  background: rgba($colour-cta, 0.5);
+}
