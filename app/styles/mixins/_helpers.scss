@@ -111,5 +111,18 @@
   }
 }
 
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function clamp($value, $min, $max) {
+  @return min(max($value, $min), $max);
+}
+
+@function normalise($value, $min, $max) {
+  $normalized: ($value - $min) / ($max - $min);
+  @return $normalized;
+}
+
 @include make-hide-helpers();
 @include make-align-helpers();
