@@ -21,7 +21,11 @@ gulp.task('scripts', () => {
 
   return b.bundle()
     .pipe(source('app.js'))
-    .pipe($.plumber())
+    .pipe($.plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+      }}))
     .pipe(buffer())
     .pipe($.sourcemaps.init({loadMaps: true}))
     .pipe($.sourcemaps.write('.'))
