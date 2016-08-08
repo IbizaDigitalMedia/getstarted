@@ -17,83 +17,105 @@
   </head>
   <body class="container">
 
-    <div class="test">
-      <div class="test2">hi</div>
-    </div>
-
-    <h2>Three equal columns</h2>
+    <h2>Grid</h2>
     <div class="row">
-      <div class="c-md-4">.c-md-4</div>
-      <div class="c-md-4">.c-md-4</div>
-      <div class="c-md-4">.c-md-4</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
+      <div class="c-md-1">c-md-1</div>
     </div>
-
-    <h2>Three unequal columns</h2>
     <div class="row">
-      <div class="c-md-3">.c-md-3</div>
-      <div class="c-md-6">.c-md-6</div>
-      <div class="c-md-3">.c-md-3</div>
+      <div class="c-md-8">c-md-8</div>
+      <div class="c-md-4">c-md-4</div>
     </div>
-
-    <h2>Two columns</h2>
     <div class="row">
-      <div class="c-md-8">.c-md-8</div>
-      <div class="c-md-4">.c-md-4</div>
+      <div class="c-md-4">c-md-4</div>
+      <div class="c-md-4">c-md-4</div>
+      <div class="c-md-4">c-md-4</div>
     </div>
-
-    <h2>Two columns (without gutter)</h2>
     <div class="row">
-      <div class="c-md-8 no-gutter">.c-md-8 .no-gutter</div>
-      <div class="c-md-4 no-gutter">.c-md-4 .no-gutter</div>
+      <div class="c-md-6">c-md-6</div>
+      <div class="c-md-6">c-md-6</div>
     </div>
 
-    <h2>Full width column (with gutter)</h2>
-    <div class="row">
-      <div class="c-md-12 full-width">.c-md-12 .full-width</div>
-    </div>
-
-    <h2>Full width column (without gutter)</h2>
-    <div class="row">
-      <div class="c-md-12 full-width no-gutter">.c-md-12 .full-width .no-gutter</div>
-    </div>
-
-    <h2>Two columns with two nested columns</h2>
-    <div class="row">
-      <div class="c-md-8">
-        .c-md-8
-        <div class="row">
-          <div class="c-md-6">.c-md-6</div>
-          <div class="c-md-6">.c-md-6</div>
-        </div>
-      </div>
-      <div class="c-md-4">.c-md-4</div>
-    </div>
-
-    <h2>Shifting columns</h2>
-    <div class="row">
-      <div class="c-md-6 s-md-2">.c-md-6 .s-md-2</div>
-      <div class="c-md-4">.c-md-4</div>
-    </div>
-
-    <h2>Shifting columns (mobile and desktop)</h2>
-    <div class="row">
-      <div class="c-md-6 s-md-2 s-sm-2">.c-md-6 .s-md-2 .s-sm-2</div>
-      <div class="c-md-4">.c-md-4</div>
-    </div>
-
-    <h2>Mixed: mobile and desktop</h2>
+    <h2>Responsive Grid</h2>
     <div class="row">
       <div class="c-xs-12 c-md-8">.c-xs-12 .c-md-8</div>
       <div class="c-xs-6 c-md-4">.c-xs-6 .c-md-4</div>
     </div>
+
     <div class="row">
       <div class="c-xs-6 c-md-4">.c-xs-6 .c-md-4</div>
       <div class="c-xs-6 c-md-4">.c-xs-6 .c-md-4</div>
       <div class="c-xs-6 c-md-4">.c-xs-6 .c-md-4</div>
     </div>
+
     <div class="row">
       <div class="c-xs-6">.c-xs-6</div>
       <div class="c-xs-6">.c-xs-6</div>
+    </div>
+
+    <h2>Full Width Row</h2>
+    <div class="row full-width">
+      <div class="c-md-8">c-md-8</div>
+      <div class="c-md-4">c-md-4</div>
+    </div>
+
+    <h2>Shift Columns</h2>
+    <div class="row">
+      <div class="c-md-4">.c-md-4</div>
+      <div class="c-md-4 s-md-4">.c-md-4 .s-md-4</div>
+    </div>
+    <div class="row">
+      <div class="c-md-3 s-md-3">.c-md-3 .s-md-3</div>
+      <div class="c-md-3 s-md-3">.c-md-3 .s-md-3</div>
+    </div>
+    <div class="row">
+      <div class="c-md-6 s-md-3">.c-md-6 .s-md-3</div>
+    </div>
+
+    <h2>Nesting Grids</h2>
+    <div class="row">
+      <div class="c-sm-6">
+        .c-sm-9
+        <div class="row">
+          <div class="c-xs-8 c-sm-6">
+            .c-xs-8 .c-sm-6
+          </div>
+          <div class="c-xs-4 c-sm-6">
+            .c-xs-4 .c-sm-6
+          </div>
+        </div>
+      </div>
+      <div class="c-sm-6">
+        .c-sm-9
+        <div class="row">
+          <div class="c-xs-8 c-sm-6">
+            .c-xs-8 .c-sm-6
+          </div>
+          <div class="c-xs-4 c-sm-6">
+            .c-xs-4 .c-sm-6
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Gutterless Grid</h2>
+    <div class="row">
+      <div class="c-md-6-ng">.c-md-6-ng</div>
+      <div class="c-md-6-ng">.c-md-6-ng</div>
+    </div>
+    <div class="row">
+      <div class="c-md-6 c-sm-6-ng">.c-md-6-ng .c-sm-6-ng</div>
+      <div class="c-md-6 c-sm-6-ng">.c-md-6-ng .c-sm-6-ng</div>
     </div>
 
     <!-- build:js scripts/vendor.js -->
