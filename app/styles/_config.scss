@@ -1,10 +1,14 @@
 //
-// 1. Grid
+// Grid
 //
 
 // Max width of container class
 // default: 1200px
-$container-max-width: 1200px;
+$container-max-width: 1200px !default;
+
+// Container padding
+// default: 1.875em
+$container-padding: 1.875em !default;
 
 // Enables full width container
 // default: false
@@ -13,26 +17,6 @@ $container-full-width: false !default;
 // Enables flex grid (experimental)
 // default: false
 $flex-grid: false !default;
-
-// Enables responsive fluid typography
-// default: true
-$fluid-typography: true !default;
-
-// Minimum fluid body font size
-// default: 12px
-$body-font-size-min: 12px !default;
-
-// Maximum fluid body font size
-// default: 16px
-$body-font-size-max: 16px !default;
-
-// Minimum fluid header font size
-// default: 16px
-$header-font-size-min: 18px !default;
-
-// Maximum fluid header font size
-// default: 36px
-$header-font-size-max: 36px !default;
 
 // EM base (for converting px to em)
 // default: 16px
@@ -52,7 +36,46 @@ $debug: true !default;
 
 
 //
-// 2. Breakpoints
+// Typography
+//
+
+// Header font family
+// default: "Open Sans", Helvetica, Arial, sans-serif;
+$header-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+
+// Body font family
+// default: "Open Sans", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+
+//
+// Header font weight
+// default: 600
+$header-font-weight: 600 !default;
+
+//
+// Body font weight
+// default: 400
+$body-font-weight: 400 !default;
+
+// Minimum body font size
+// default: 12px
+$body-font-size-min: 12px !default;
+
+// Maximum body font size
+// default: 16px
+$body-font-size-max: 16px !default;
+
+// Minimum header font size
+// default: 18px
+$header-font-size-min: 18px !default;
+
+// Maximum header font size
+// default: 36px
+$header-font-size-max: 36px !default;
+
+
+//
+// Breakpoints
 //
 
 $breakpoints: (
@@ -83,7 +106,7 @@ $fluid-type-breakpoints: (
 ) !default;
 
 //
-// 3. Containers
+// Containers
 //
 
 $containers: (
@@ -95,7 +118,7 @@ $containers: (
 
 
 //
-// 4. Debug
+// Debug
 //
 
 @if ($debug) {
@@ -108,6 +131,6 @@ $containers: (
   }
 
   .row {
-    margin-bottom: 5px;
+    margin-bottom: $gutter;
   }
 }
