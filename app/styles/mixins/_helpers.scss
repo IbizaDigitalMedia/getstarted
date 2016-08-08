@@ -1,62 +1,64 @@
 // Helpers
 
-/**
- * Accepts a Sass list of directions and sizes
- * for applying padding to elements.
- *
- * Example:
- *   @include gutter-padding(top 1, right 1, bottom 2, left 1);
- *
- * @param  {list} $padding... List of directions and size
- */
+//
+// Accepts a Sass list of directions and sizes
+// for applying padding to elements.
+//
+// Example:
+//    @include gutter-padding(top 1, right 1, bottom 2, left 1);
+//
+//    @param  {list} $padding... List of directions and sizes
+//
 @mixin gutter-padding($padding...) {
   @each $direction, $value in $padding {
     padding-#{$direction}: $value * $gutter;
   }
 }
 
-/**
- * Accepts a Sass list of directions and sizes
- * for applying margin to elements.
- *
- * Example:
- *   @include gutter-margin(top 1, right 1, bottom 2, left 1);
- *
- * @param  {list} $margin... List of directions and size
- */
+//
+// Accepts a Sass list of directions and sizes
+// for applying margin to elements.
+//
+// Example:
+//    @include gutter-margin(top 1, right 1, bottom 2, left 1);
+//
+//    @param  {list} $margin... List of directions and sizes
+//
 @mixin gutter-margin($margin...) {
   @each $direction, $value in $margin {
     margin-#{$direction}: $value * $gutter;
   }
 }
 
-/**
- * Container for elements that are centered
- * vertically.
- *
- * Example:
- *   .container {
- *     @include valign-container();
- *
- *     // Element to be centered vertically
- *     .inner {
- *       @include valign-centered();
- *     }
- *   }
-  */
-@mixin valign-container() {
+//
+// Container for elements that are centered
+// vertically.
+//
+// NOTE: The parent element must have a declared height
+//
+// Example:
+//   .outer {
+//     @include valign-outer($height: 100%);
+//
+//     // Element to be centered vertically
+//     .inner {
+//       @include valign-inner();
+//     }
+//   }
+//
+@mixin valign-outer($height: 100%) {
   position: relative;
-  height: 100%;
+  height: $height;
 }
 
-/**
- * Center element vertically inside a
- * valign-container.
- *
- * Example:
- *   @see valign-container()
-  */
-@mixin valign-centered() {
+//
+// Center element vertically inside a
+// valign-outer.
+//
+// Example:
+//   @see valign-outer()
+//
+@mixin valign-inner() {
   @include transform(translateY(-50%));
   position: relative;
   top: 50%;

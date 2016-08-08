@@ -2,8 +2,13 @@
 
 @mixin make-containers($containers: $containers) {
   @each $breakpoint, $width in $containers {
-    @include make-breakpoint($breakpoint) {
-      max-width: $width;
+    @include media(min-width $width) {
+      @if $container-full-width {
+        max-width: 100%;
+      }
+      @else {
+        max-width: $width;
+      }
     }
   }
 }
@@ -22,11 +27,21 @@
   }
 }
 
-@mixin make-shift($breakpoint, $columns: $grid-columns) {
-  @for $i from 0 through $columns {
-    .s-#{$breakpoint}-#{$i} {
-      @include shift($i);
-    }
+@mixin make-shift($breakpoint, $column) {
+  .s-#{$breakpoint}-#{$column} {
+    @include shift($column);
+  }
+}
+
+@mixin make-column($breakpoint, $column) {
+  .c-#{$breakpoint}-#{$column} {
+    @include span-columns($column);
+  }
+
+  .c-#{$breakpoint}-#{$column}-ng {
+    @include span-columns($column, block-collapse);
+
+    margin-right: 0;
   }
 }
 
@@ -34,26 +49,9 @@
   @if not $flex-grid {
     @each $breakpoint, $size in $breakpoints {
       @include make-breakpoint($breakpoint) {
-        @for $i from 1 through $columns {
-          @include make-shift($breakpoint);
-
-          .c-#{$breakpoint}-#{$i} {
-            @include span-columns($i);
-
-            &.full-width {
-              @include make-full-width();
-
-              &.no-gutter {
-                @include make-full-width(false);
-              }
-            }
-
-            &.no-gutter {
-              @include span-columns($i, block-collapse);
-
-              margin-right: 0;
-            }
-          }
+        @for $column from 1 through $columns {
+          @include make-column($breakpoint, $column);
+          @include make-shift($breakpoint, $column);
         }
       }
     }
@@ -63,14 +61,12 @@
   }
 }
 
-@mixin make-full-width($has-gutter: true) {
+@mixin make-full-width() {
   @include transform(translateX(-50%));
-  @if $has-gutter {
-    width: calc(100vw - #{$gutter * 2}) !important;
-  }
-  @else {
-    width: calc(100vw) !important;
-  }
+
+  // scss-lint:disable ImportantRule
+  width: calc(100vw) !important;
+  // scss-lint:enable ImportantRule
   margin-right: 0;
   margin-left: calc(50%);
 }
@@ -78,34 +74,19 @@
 .container {
   @include make-containers();
 
-  @if $container-full-width {
-    @include outer-container(100%);
-  }
-  @else {
-    @include outer-container($container-max-width);
-  }
+  margin-right: auto;
+  margin-left: auto;
 
   &.full-width {
-    @include outer-container(100%);
+    max-width: 100%;
   }
 }
 
 .row {
   @include row();
 
-  zoom: 1;
-}
-
-@if ($debug) {
-  [class*="c-"] {
-    padding: $gutter;
-
-    background-color: rgba(#000000, 0.15);
-    border: 1px solid rgba(#000000, 0.2);
-  }
-
-  .row {
-    margin-bottom: $gutter;
+  &.full-width {
+    @include make-full-width();
   }
 }
 

@@ -10,15 +10,20 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('styles', () => {
-  return gulp.src(global.paths.app + '/styles/app.scss')
+  return gulp.src(global.paths.app + '/styles/**/*.scss')
+    .pipe($.plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+      }}))
     .pipe(scsslint())
-    .pipe($.plumber())
+    .pipe(scsslint.failReporter())
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.']
-    }).on('error', $.sass.logError))
+    }))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(global.paths.tmp + '/styles'))
