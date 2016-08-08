@@ -14,6 +14,10 @@ $container-full-width: false !default;
 // default: false
 $flex-grid: false !default;
 
+// Enables responsive fluid typography
+// default: true
+$fluid-typography: true !default;
+
 // EM base (for converting px to em)
 // default: 16px
 $em-base: 16px !default;
@@ -54,7 +58,7 @@ $breakpoints: (
 
   // Extra large screens/desktop
   // default: 1200px
-  xl: 1200px
+  xlg: 1200px
 ) !default;
 
 
@@ -66,5 +70,24 @@ $containers: (
   sm: 576px,
   md: 720px,
   lg: 940px,
-  xl: 1140px
+  xl: $container-max-width
 ) !default;
+
+
+//
+// 4. Debug
+//
+
+@if ($debug) {
+  [class*="c-"] {
+    padding: 5px;
+
+    font-size: 12px;
+    text-align: center;
+    background-color: rgba(#000000, 0.15);
+  }
+
+  .row {
+    margin-bottom: 5px;
+  }
+}
