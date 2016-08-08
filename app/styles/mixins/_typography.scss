@@ -49,6 +49,9 @@
   p {
     @include fluid-type(font-size, $min-vw, $max-vw, $min, $max);
     @include fluid-type(line-height, $min-vw, $max-vw, $min * $ratio, $max * $ratio);
+  }
+
+  p {
     @include fluid-type(padding-bottom, $min-vw, $max-vw, $gutter, $gutter / $ratio);
   }
 }
