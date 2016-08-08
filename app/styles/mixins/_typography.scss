@@ -1,0 +1,56 @@
+// Typography
+// http://www.sassmeister.com/gist/7f22e44ace49b5124eec
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @include media(min-width $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @include media(min-width $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@mixin fluid-headers($min, $max) {
+  $min-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, min));
+  $max-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, max));
+  $num-headers: 6;
+
+  @for $i from 1 through $num-headers {
+    $base: (($num-headers + 1) - $i);
+
+    h#{$i} {
+      $multiplier: 1 + normalise($base, 1, $num-headers);
+      $base-max: min($min * $multiplier, $max);
+
+      @include fluid-type(font-size, $min-vw, $max-vw, $min, $base-max);
+    }
+
+  }
+}
+
+@mixin fluid-body($min, $max) {
+  $min-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, min));
+  $max-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, max));
+
+  body,
+  p {
+    @include fluid-type(font-size, $min-vw, $max-vw, $min, $max);
+  }
+}
+
+@if ($fluid-typography) {
+  @include fluid-headers($header-font-size-min, $header-font-size-max);
+  @include fluid-body($body-font-size-min, $body-font-size-max);
+}
+@else {
+
+}

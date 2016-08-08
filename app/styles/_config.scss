@@ -18,6 +18,22 @@ $flex-grid: false !default;
 // default: true
 $fluid-typography: true !default;
 
+// Minimum fluid body font size
+// default: 12px
+$body-font-size-min: 12px !default;
+
+// Maximum fluid body font size
+// default: 16px
+$body-font-size-max: 16px !default;
+
+// Minimum fluid header font size
+// default: 16px
+$header-font-size-min: 18px !default;
+
+// Maximum fluid header font size
+// default: 36px
+$header-font-size-max: 36px !default;
+
 // EM base (for converting px to em)
 // default: 16px
 $em-base: 16px !default;
@@ -61,6 +77,10 @@ $breakpoints: (
   xlg: 1200px
 ) !default;
 
+$fluid-type-breakpoints: (
+  min: sm,
+  max: xlg
+) !default;
 
 //
 // 3. Containers
