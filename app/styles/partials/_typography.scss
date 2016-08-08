@@ -1,0 +1,18 @@
+// Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font-family;
+  font-weight: $header-font-weight;
+  color: $colour-header;
+}
+
+p {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  color: $colour-text;
+}

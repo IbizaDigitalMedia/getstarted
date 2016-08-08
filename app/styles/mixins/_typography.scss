@@ -1,5 +1,6 @@
 // Typography
 // http://www.sassmeister.com/gist/7f22e44ace49b5124eec
+// modified by Brett Dorrans <brett@getbrett.co.uk>
 
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
   @each $property in $properties {
@@ -19,7 +20,7 @@
   }
 }
 
-@mixin fluid-headers($min, $max) {
+@mixin headers($min, $max) {
   $min-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, min));
   $max-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, max));
   $num-headers: 6;
@@ -30,27 +31,27 @@
     h#{$i} {
       $multiplier: 1 + normalise($base, 1, $num-headers);
       $base-max: min($min * $multiplier, $max);
+      $padding: ($em-base / 2) * $multiplier;
 
       @include fluid-type(font-size, $min-vw, $max-vw, $min, $base-max);
+      @include fluid-type(padding-bottom, $min-vw, $max-vw, $padding, $em-base);
     }
 
   }
 }
 
-@mixin fluid-body($min, $max) {
+@mixin body($min, $max) {
   $min-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, min));
   $max-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, max));
+  $ratio: 1.33;
 
   body,
   p {
     @include fluid-type(font-size, $min-vw, $max-vw, $min, $max);
+    @include fluid-type(line-height, $min-vw, $max-vw, $min * $ratio, $max * $ratio);
+    @include fluid-type(padding-bottom, $min-vw, $max-vw, $gutter, $gutter / $ratio);
   }
 }
 
-@if ($fluid-typography) {
-  @include fluid-headers($header-font-size-min, $header-font-size-max);
-  @include fluid-body($body-font-size-min, $body-font-size-max);
-}
-@else {
-
-}
+@include headers($header-font-size-min, $header-font-size-max);
+@include body($body-font-size-min, $body-font-size-max);

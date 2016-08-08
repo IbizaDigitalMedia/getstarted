@@ -3,6 +3,8 @@
 @mixin make-containers($containers: $containers) {
   @each $breakpoint, $width in $containers {
     @include media(min-width $width) {
+      padding: $container-padding 0;
+
       @if $container-full-width {
         max-width: 100%;
       }
