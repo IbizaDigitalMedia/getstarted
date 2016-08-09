@@ -18,6 +18,10 @@ $container-full-width: false !default;
 // default: false
 $flex-grid: false !default;
 
+// Fluid type ratio
+// default: 1.33
+$fluid-type-ratio: 1 + (1 / 3);
+
 // EM base (for converting px to em)
 // default: 16px
 $em-base: 16px !default;
@@ -47,15 +51,22 @@ $header-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
 // default: "Open Sans", Helvetica, Arial, sans-serif;
 $body-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
 
+// Font weights
+// defaults: 700, 600, 400, 100
+$bold-weight: 700;
+$semibold-weight: 600;
+$normal-weight: 400;
+$light-weight: 100;
+
 //
 // Header font weight
 // default: 600
-$header-font-weight: 600 !default;
+$header-font-weight: $semibold-weight !default;
 
 //
 // Body font weight
 // default: 400
-$body-font-weight: 400 !default;
+$body-font-weight: $normal-weight !default;
 
 // Minimum body font size
 // default: 12px
@@ -122,7 +133,7 @@ $containers: (
 //
 
 @if ($debug) {
-  [class*="c-"] {
+  .debug [class*="c-"] {
     padding: 5px;
 
     font-size: 12px;
