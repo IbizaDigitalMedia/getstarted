@@ -65,13 +65,11 @@
 }
 
 @mixin make-full-width() {
-  @include transform(translateX(-50%));
-
-  // scss-lint:disable ImportantRule
-  width: calc(100vw) !important;
-  // scss-lint:enable ImportantRule
+  position: relative;
+  left: 50%;
+  width: 100vw;
   margin-right: 0;
-  margin-left: calc(50%);
+  margin-left: -50vw;
 }
 
 .container {
