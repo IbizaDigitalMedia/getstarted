@@ -20,6 +20,11 @@ p {
 
 p {
   padding-bottom: $gutter;
+
+  // Lead paragraphs
+  &.lead {
+    font-size: 120%;
+  }
 }
 
 em {
@@ -60,5 +65,9 @@ blockquote {
     display: block;
 
     color: lighten($colour-text, 40%);
+
+    &:before {
+      content: "\00A0 \2014";
+    }
   }
 }

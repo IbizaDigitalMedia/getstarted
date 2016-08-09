@@ -31,10 +31,11 @@
     h#{$i} {
       $multiplier: 1 + normalise($base, 1, $num-headers);
       $base-max: min($min * $multiplier, $max);
-      $padding: ($em-base / 2) * $multiplier;
+      $padding-max: ($base-max / 4) * $multiplier;
+      $padding-min: $padding-max - ($padding-max / 4);
 
       @include fluid-type(font-size, $min-vw, $max-vw, $min, $base-max);
-      @include fluid-type(padding-bottom padding-top, $min-vw, $max-vw, $padding, $em-base);
+      @include fluid-type(padding-bottom padding-top, $min-vw, $max-vw, $padding-min, $padding-max);
     }
 
   }

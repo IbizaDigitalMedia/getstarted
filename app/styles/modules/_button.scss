@@ -42,16 +42,6 @@
 
     &.animate {
       animation: ripple 0.65s $ease-in-out-quad;
-
-      // scss-lint:disable NestingDepth
-      @keyframes ripple {
-        100% {
-          @include transform(scale(2.5));
-
-          opacity: 0;
-        }
-      }
-      // scss-lint:enable NestingDepth
     }
   }
 
