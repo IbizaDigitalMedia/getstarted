@@ -11,7 +11,12 @@
 //
 @mixin gutter-padding($padding...) {
   @each $direction, $value in $padding {
-    padding-#{$direction}: $value * $gutter;
+    @if $direction == "all" {
+      padding: $value * $gutter;
+    }
+    @else {
+      padding-#{$direction}: $value * $gutter;
+    }
   }
 }
 
@@ -26,7 +31,12 @@
 //
 @mixin gutter-margin($margin...) {
   @each $direction, $value in $margin {
-    margin-#{$direction}: $value * $gutter;
+    @if $direction == "all" {
+      margin: $value * $gutter;
+    }
+    @else {
+      margin-#{$direction}: $value * $gutter;
+    }
   }
 }
 
@@ -103,10 +113,20 @@
   }
 }
 
-@mixin make-align-helpers() {
+@mixin make-align-helpers($breakpoints: $breakpoints) {
   @each $alignment in (left, center, right) {
     .align-#{$alignment} {
       text-align: $alignment;
+    }
+  }
+
+  @each $breakpoint, $size in $breakpoints {
+    @each $alignment in (left, center, right) {
+      @include make-breakpoint($breakpoint) {
+        .align-#{$breakpoint}-#{$alignment} {
+          text-align: $alignment;
+        }
+      }
     }
   }
 }

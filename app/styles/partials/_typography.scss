@@ -1,5 +1,9 @@
 // Typography
 
+//
+// Headers
+//
+
 h1,
 h2,
 h3,
@@ -9,7 +13,17 @@ h6 {
   font-family: $header-font-family;
   font-weight: $header-font-weight;
   color: $colour-header;
+
+  small {
+    font-size: 60%;
+    color: desaturate(lighten($colour-header, 50%), 90%);
+  }
 }
+
+
+//
+// Paragraphs
+//
 
 body,
 p {
@@ -20,11 +34,6 @@ p {
 
 p {
   padding-bottom: $gutter;
-
-  // Lead paragraphs
-  &.lead {
-    font-size: 120%;
-  }
 }
 
 em {
@@ -34,6 +43,19 @@ em {
 strong {
   font-weight: $semibold-weight;
 }
+
+// Lead paragraphs
+// Larger font size than default
+.lead {
+  @include gutter-padding(bottom 1.2);
+
+  font-size: 120%;
+}
+
+
+//
+// Anchors
+//
 
 a {
   @include transition(all 150ms $ease-in-out-quad);
@@ -48,6 +70,11 @@ a {
     color: darken($colour-link, 15%);
   }
 }
+
+
+//
+// Blockquotes
+//
 
 blockquote {
   @include gutter-padding(left 0.5);

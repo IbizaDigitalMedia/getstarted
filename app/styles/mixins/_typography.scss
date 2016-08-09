@@ -44,21 +44,20 @@
 @mixin body($min, $max) {
   $min-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, min));
   $max-vw: map-get($breakpoints, map-get($fluid-type-breakpoints, max));
-  $ratio: $fluid-type-ratio;
 
   body,
   p {
     @include fluid-type(font-size, $min-vw, $max-vw, $min, $max);
-    @include fluid-type(line-height, $min-vw, $max-vw, $min * $ratio, $max * $ratio);
+    @include fluid-type(line-height, $min-vw, $max-vw, $min * $fluid-type-ratio, $max * $fluid-type-ratio);
   }
 
   blockquote {
-    @include fluid-type(font-size, $min-vw, $max-vw, $header-font-size-min, $header-font-size-max);
-    @include fluid-type(line-height, $min-vw, $max-vw, $header-font-size-min * $ratio, $header-font-size-max * $ratio);
+    @include fluid-type(font-size, $min-vw, $max-vw, $blockquote-font-size-min, $blockquote-font-size-max);
+    @include fluid-type(line-height, $min-vw, $max-vw, $blockquote-font-size-min * $fluid-type-ratio, $blockquote-font-size-max * $fluid-type-ratio);
   }
 
   cite {
-    @include fluid-type(font-size, $min-vw, $max-vw, $header-font-size-min / $ratio, $header-font-size-max / $ratio);
+    @include fluid-type(font-size, $min-vw, $max-vw, $blockquote-font-size-min / $fluid-type-ratio, $blockquote-font-size-max / $fluid-type-ratio);
   }
 }
 

@@ -6,7 +6,7 @@
  */
 
 //
-// 1. Bower components
+// Bower components
 //
 
 // scss-lint:disable all
@@ -19,14 +19,14 @@
 
 
 //
-// 2. Core config
+// Core config
 //
 
 @import "config";
 
 
 //
-// 3. Mixins
+// Mixins
 //
 
 @import "mixins/grid";
@@ -34,7 +34,7 @@
 @import "mixins/typography";
 
 //
-// 4. Partials
+// Partials
 //
 
 @import "partials/animations";
@@ -44,8 +44,9 @@
 
 
 //
-// 5. Modules
+// Modules
 //
 
 @import "modules/body";
 @import "modules/button";
+@import "modules/frame";

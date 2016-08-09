@@ -1,9 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>getstarted</title>
 
     <!-- build:css styles/vendor.css -->
@@ -21,12 +22,28 @@
     <h1>getstarted 2</h1>
     <p class="lead">The Opinionated Front-End Workflow</p>
 
-    <h1>Typography</h1>
-    <h2>Typography</h2>
-    <h3>Typography</h3>
-    <h4>Typography</h4>
-    <h5>Typography</h5>
-    <h6>Typography</h6>
+    <section id="typography">
+      <div class="row frame">
+        <div class="c-md-6">
+          <h3>The Framework</h3>
+          <p>In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
+          <p><strong>getstarted</strong> takes this further by featuring fluid, responsive typography out of the box, and a selection of common components.</p>
+          <blockquote>
+            I find it so funny that people find me so interesting.
+            <cite>Britney Spears</cite>
+          </blockquote>
+        </div>
+        <div class="c-md-6 align-md-right align-sm-center">
+          <h1>Heading 1 <small>H1</small></h1>
+          <h2>Heading 2 <small>H2</small></h2>
+          <h3>Heading 3 <small>H3</small></h3>
+          <h4>Heading 4 <small>H4</small></h4>
+          <h5>Heading 5 <small>H5</small></h5>
+          <h6>Heading 6 <small>H6</small></h6>
+        </div>
+      </div>
+    </section>
+
     <p>Lorem ipsum <a href="/">dolor</a> sit amet, consectetur adipiscing elit. Sed aliquam
        ex vel accumsan ultrices. Ut convallis maximus diam nec efficitur.</p>
     <p>In feugiat, felis id condimentum maximus, velit nibh vestibulum mi, nec porta leo
@@ -35,25 +52,6 @@
        pharetra. Class aptent taciti sociosqu ad litora torquent per
        conubia nostra, per inceptos himenaeos. Duis nec nunc sapien. Aliquam erat volutpat.
        Vivamus accumsan arcu nec mi mattis vestibulum.</p>
-    <p>In feugiat, <strong>felis id condimentum maximus</strong>, velit nibh vestibulum mi,
-       nec porta leo tellus non purus. Sed a facilisis urna. Quisque id metus
-       sed lacus pharetra ultricies vitae sed risus. Curabitur consectetur luctus pharetra.
-       Class aptent taciti sociosqu ad litora torquent per
-       conubia nostra, per inceptos himenaeos. Duis nec nunc sapien. Aliquam erat volutpat.
-       Vivamus accumsan arcu nec mi mattis vestibulum.</p>
-    <h4>Header 4</h4>
-    <p>Lorem ipsum <a href="/">dolor</a> sit amet, consectetur adipiscing elit. Sed aliquam
-       ex vel accumsan ultrices. Ut convallis maximus diam nec efficitur.</p>
-    <p>In feugiat, felis id condimentum maximus, velit nibh vestibulum mi, nec porta leo
-       tellus non purus. Sed a facilisis urna. Quisque id metus
-       sed lacus pharetra ultricies vitae sed risus. <em>Curabitur</em> consectetur luctus
-       pharetra. Class aptent taciti sociosqu ad litora torquent per
-       conubia nostra, per inceptos himenaeos. Duis nec nunc sapien. Aliquam erat volutpat.
-       Vivamus accumsan arcu nec mi mattis vestibulum.</p>
-    <blockquote>
-        I find it so funny that people find me so interesting.
-        <cite>Britney Spears</cite>
-    </blockquote>
     <p>In feugiat, <strong>felis id condimentum maximus</strong>, velit nibh vestibulum mi,
        nec porta leo tellus non purus. Sed a facilisis urna. Quisque id metus
        sed lacus pharetra ultricies vitae sed risus. Curabitur consectetur luctus pharetra.
@@ -61,8 +59,8 @@
        conubia nostra, per inceptos himenaeos. Duis nec nunc sapien. Aliquam erat volutpat.
        Vivamus accumsan arcu nec mi mattis vestibulum.</p>
 
-    <section class="grid debug">
-      <h2>Grid</h2>
+    <section id="grid" class="debug">
+      <h1>Grid</h1>
       <div class="row">
         <div class="c-md-1">c-md-1</div>
         <div class="c-md-1">c-md-1</div>
@@ -91,7 +89,7 @@
         <div class="c-md-6">c-md-6</div>
       </div>
 
-      <h2>Responsive Grid</h2>
+      <h4>Responsive Grid</h4>
       <div class="row">
         <div class="c-xs-12 c-md-8">.c-xs-12 .c-md-8</div>
         <div class="c-xs-6 c-md-4">.c-xs-6 .c-md-4</div>
@@ -108,13 +106,13 @@
         <div class="c-xs-6">.c-xs-6</div>
       </div>
 
-      <h2>Full Width Row</h2>
+      <h4>Full Width Row</h4>
       <div class="row full-width">
         <div class="c-md-8">c-md-8</div>
         <div class="c-md-4">c-md-4</div>
       </div>
 
-      <h2>Shift Columns</h2>
+      <h4>Shift Columns</h4>
       <div class="row">
         <div class="c-md-4">.c-md-4</div>
         <div class="c-md-4 s-md-4">.c-md-4 .s-md-4</div>
@@ -127,7 +125,7 @@
         <div class="c-md-6 s-md-3">.c-md-6 .s-md-3</div>
       </div>
 
-      <h2>Nesting Grids</h2>
+      <h4>Nesting Grids</h4>
       <div class="row">
         <div class="c-sm-6">
           .c-sm-9
@@ -153,7 +151,7 @@
         </div>
       </div>
 
-      <h2>Gutterless Grid</h2>
+      <h4>Gutterless Grid</h4>
       <div class="row">
         <div class="c-md-6-ng">.c-md-6-ng</div>
         <div class="c-md-6-ng">.c-md-6-ng</div>
@@ -164,7 +162,7 @@
       </div>
     </section>
 
-    <h2>Buttons</h2>
+    <h1>Buttons</h1>
     <h4>Primary Buttons</h4>
     <p>Provide extra visual weight and identify the primary action in a set of buttons.</p>
     <div class="row">
