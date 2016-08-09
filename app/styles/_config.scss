@@ -1,10 +1,14 @@
 //
-// 1. Grid
+// Grid
 //
 
 // Max width of container class
 // default: 1200px
-$container-max-width: 1200px;
+$container-max-width: 1200px !default;
+
+// Container padding
+// default: 1.875em
+$container-padding: 1.875em !default;
 
 // Enables full width container
 // default: false
@@ -14,9 +18,9 @@ $container-full-width: false !default;
 // default: false
 $flex-grid: false !default;
 
-// Enables responsive fluid typography
-// default: true
-$fluid-typography: true !default;
+// Fluid type ratio
+// default: 1.33
+$fluid-type-ratio: 1 + (1 / 3);
 
 // EM base (for converting px to em)
 // default: 16px
@@ -36,7 +40,61 @@ $debug: true !default;
 
 
 //
-// 2. Breakpoints
+// Typography
+//
+
+// Header font family
+// default: "Open Sans", Helvetica, Arial, sans-serif;
+$header-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+
+// Body font family
+// default: "Open Sans", Helvetica, Arial, sans-serif;
+$body-font-family: "Open Sans", Helvetica, Arial, sans-serif !default;
+
+// Font weights
+// defaults: 700, 600, 400, 100
+$bold-weight: 700;
+$semibold-weight: 600;
+$normal-weight: 400;
+$light-weight: 100;
+
+//
+// Header font weight
+// default: 600
+$header-font-weight: $semibold-weight !default;
+
+//
+// Body font weight
+// default: 400
+$body-font-weight: $normal-weight !default;
+
+// Minimum body font size
+// default: 12px
+$body-font-size-min: 12px !default;
+
+// Maximum body font size
+// default: 16px
+$body-font-size-max: 16px !default;
+
+// Minimum header font size
+// default: 18px
+$header-font-size-min: 18px !default;
+
+// Maximum header font size
+// default: 36px
+$header-font-size-max: 36px !default;
+
+// Minimum blockquote font size
+// default: 16px
+$blockquote-font-size-min: 16px !default;
+
+// Maximum blockquote font size
+// default: 22px
+$blockquote-font-size-max: 22px !default;
+
+
+//
+// Breakpoints
 //
 
 $breakpoints: (
@@ -61,9 +119,13 @@ $breakpoints: (
   xlg: 1200px
 ) !default;
 
+$fluid-type-breakpoints: (
+  min: sm,
+  max: xlg
+) !default;
 
 //
-// 3. Containers
+// Containers
 //
 
 $containers: (
@@ -75,11 +137,11 @@ $containers: (
 
 
 //
-// 4. Debug
+// Debug
 //
 
 @if ($debug) {
-  [class*="c-"] {
+  .debug [class*="c-"] {
     padding: 5px;
 
     font-size: 12px;
@@ -88,6 +150,6 @@ $containers: (
   }
 
   .row {
-    margin-bottom: 5px;
+    margin-bottom: $gutter;
   }
 }

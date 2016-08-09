@@ -4,7 +4,7 @@
 
 $colour-black: #000000;
 $colour-oil: #08110e;
-$colour-slate: #3f3f40;
+$colour-slate: #333333;
 $colour-grey: #cccbbb;
 $colour-white: #ffffff;
 $colour-transparent: rgba(0, 0, 0, 0);
@@ -32,8 +32,8 @@ $colour-body: $colour-white;
 // 3. Typography colours
 //
 
-$colour-text: $colour-sea;
-$colour-header: $colour-cta;
+$colour-text: $colour-slate;
+$colour-header: $colour-oil;
 $colour-link: $colour-sky;
 $colour-blockquote: $colour-hot;
 $colour-cite: $colour-grey;
