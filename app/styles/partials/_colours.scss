@@ -10,14 +10,15 @@ $colour-white: #ffffff;
 $colour-transparent: rgba(0, 0, 0, 0);
 
 $colour-sea: #014057;
-$colour-blood: #bf3636;
+$colour-blood: #c0392b;
 $colour-pearl: #fbfbfb;
-$colour-teal: #01b0f3;
+$colour-teal: #3498db;
 $colour-sky: #4a9aff;
 $colour-hot: #f51a47;
 $colour-navy: #204470;
 $colour-peach: #ff8088;
-$colour-grass: #75bf3d;
+$colour-grass: #27ae60;
+$colour-sun: #f39c12;
 
 
 //
@@ -48,3 +49,5 @@ $colour-button-text: $colour-pearl;
 $colour-button-text-hover: $colour-white;
 $colour-gel: $colour-pearl;
 $colour-success: $colour-grass;
+$colour-error: $colour-blood;
+$colour-warning: $colour-sun;
