@@ -10,7 +10,16 @@
 Clone repository into a directory:
   git clone https://github.com/brettdorrans/getstarted.git <directory>
 
+Remove `origin` remote:
+  git remote rm origin
 
+To serve (for development):
+  gulp serve
+
+To build (for production):
+  gulp
+
+Additional build tasks can be found in the `gulpfile` folder.
 ```
 
 
